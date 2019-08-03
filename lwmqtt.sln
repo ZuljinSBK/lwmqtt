@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29123.88
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lwmqtt", "lwmqtt.vcxproj", "{452FFC6A-51A7-4331-947C-C2699A6F3A8E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Release|ARM = Release|ARM
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{452FFC6A-51A7-4331-947C-C2699A6F3A8E}.Debug|ARM.ActiveCfg = Debug|ARM
+		{452FFC6A-51A7-4331-947C-C2699A6F3A8E}.Debug|ARM.Build.0 = Debug|ARM
+		{452FFC6A-51A7-4331-947C-C2699A6F3A8E}.Release|ARM.ActiveCfg = Release|ARM
+		{452FFC6A-51A7-4331-947C-C2699A6F3A8E}.Release|ARM.Build.0 = Release|ARM
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F6C2501A-E7D7-44DF-B42A-2F7E69A3B1CD}
+	EndGlobalSection
+EndGlobal
