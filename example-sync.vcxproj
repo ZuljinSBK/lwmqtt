@@ -41,16 +41,16 @@
     <TargetHardwareDefinition>sample_hardware.json</TargetHardwareDefinition>
     <IncludePath>include;$(IncludePath)</IncludePath>
     <LibraryPath>$(LibraryPath)</LibraryPath>
-    <OutDir>bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>obj\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>$(ProjectName)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectName)\obj\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <TargetHardwareDirectory>..\azure-sphere-samples\Hardware\avnet_mt3620_sk</TargetHardwareDirectory>
     <TargetHardwareDefinition>sample_hardware.json</TargetHardwareDefinition>
     <IncludePath>include;$(IncludePath)</IncludePath>
     <LibraryPath>$(LibraryPath)</LibraryPath>
-    <OutDir>bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>obj\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>$(ProjectName)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectName)\obj\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemGroup>
     <ClCompile Include="examples\sync-azure_sphere.c" />

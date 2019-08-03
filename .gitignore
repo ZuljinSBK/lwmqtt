@@ -4,3 +4,5 @@ gtest/
 /bin
 /obj
 /*.vcxproj.user
+/example-async
+/example-sync

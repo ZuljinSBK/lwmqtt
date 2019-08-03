@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 1,
-  "Name" : "AzureSphereMQTT",
+  "Name" : "mqtt-example",
   "ComponentId" : "9b491226-cdb5-4ac4-aa22-3c1ce07bbeaf",
   "EntryPoint": "/bin/app",
   "CmdArgs": [],

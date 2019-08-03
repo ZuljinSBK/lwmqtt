@@ -10,22 +10,10 @@
       <Platform>ARM</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\client.c" />
-    <ClCompile Include="src\helpers.c" />
-    <ClCompile Include="src\os\azure_sphere.c" />
-    <ClCompile Include="src\packet.c" />
-    <ClCompile Include="src\string.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="include\lwmqtt.h" />
-    <ClInclude Include="src\helpers.h" />
-    <ClInclude Include="src\packet.h" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{452ffc6a-51a7-4331-947c-c2699a6f3a8e}</ProjectGuid>
+    <ProjectGuid>{7A8E0D15-52BE-4F1E-9BF9-C8C2F298D959}</ProjectGuid>
     <Keyword>AzureSphere</Keyword>
-    <RootNamespace>lwmqtt</RootNamespace>
+    <RootNamespace>example-async</RootNamespace>
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <ApplicationType>Linux</ApplicationType>
     <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
@@ -38,12 +26,10 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
     <UseDebugLibraries>true</UseDebugLibraries>
     <TargetSysroot>2+Beta1905</TargetSysroot>
-    <ConfigurationType>StaticLibrary</ConfigurationType>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
     <UseDebugLibraries>false</UseDebugLibraries>
     <TargetSysroot>2+Beta1905</TargetSysroot>
-    <ConfigurationType>StaticLibrary</ConfigurationType>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings" />
@@ -51,16 +37,39 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <TargetHardwareDirectory>..\azure-sphere-samples\Hardware\avnet_mt3620_sk</TargetHardwareDirectory>
+    <TargetHardwareDefinition>sample_hardware.json</TargetHardwareDefinition>
     <IncludePath>include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <OutDir>$(ProjectName)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectName)\obj\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <TargetHardwareDirectory>..\azure-sphere-samples\Hardware\avnet_mt3620_sk</TargetHardwareDirectory>
+    <TargetHardwareDefinition>sample_hardware.json</TargetHardwareDefinition>
     <IncludePath>include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <OutDir>$(ProjectName)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectName)\obj\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
+  <ItemGroup>
+    <ClCompile Include="examples\async-azure_sphere.c" />
+    <UpToDateCheckInput Include="app_manifest.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="lwmqtt.vcxproj">
+      <Project>{452ffc6a-51a7-4331-947c-c2699a6f3a8e}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
   <ItemDefinitionGroup>
     <ClCompile>
       <AdditionalOptions>-Werror=implicit-function-declaration %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
+    <Link>
+      <LibraryDependencies>applibs;pthread;gcc_s;c</LibraryDependencies>
+      <AdditionalOptions>-Wl,--no-undefined -nodefaultlibs %(AdditionalOptions)</AdditionalOptions>
+    </Link>
   </ItemDefinitionGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets" />
 </Project>
