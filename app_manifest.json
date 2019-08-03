@@ -1,0 +1,14 @@
+{
+  "SchemaVersion": 1,
+  "Name" : "AzureSphereMQTT",
+  "ComponentId" : "9b491226-cdb5-4ac4-aa22-3c1ce07bbeaf",
+  "EntryPoint": "/bin/app",
+  "CmdArgs": [],
+  "Capabilities": {
+    "AllowedConnections": [ "broker.shiftr.io" ],
+    "Gpio": [],
+    "Uart": [],
+    "WifiConfig": false
+  },
+  "ApplicationType":"Default"
+}
